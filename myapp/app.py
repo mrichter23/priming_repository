@@ -78,7 +78,7 @@ def plot_upset(membership_df):
 
 # Predefined lists per category
 
-rna_e14_ctx_neurons = pd.read_csv(open_url("www/DEGs_E14_Ctx_up_neurons_vs_NSC.txt"), header=None, on_bad_lines='skip')
+rna_e14_ctx_neurons = pd.read_csv("www/DEGs_E14_Ctx_up_neurons_vs_NSC.txt", header=None, on_bad_lines='skip')
 rna_e14_lge_neurons = pd.read_csv(open_url("www/DEGs_E14_LGE_up_neurons_vs_NSC.txt"), header=None, on_bad_lines='skip')
 astro = pd.read_csv(open_url("www/high_expressed_genes_astrocytes_Pereira_1.csv"), header=None, on_bad_lines='skip')
 
