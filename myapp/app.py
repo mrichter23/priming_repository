@@ -164,7 +164,7 @@ app_ui = ui.page_fluid(
     
     #ui.output_image("image")
     
-    ui.tags.img(src="https://github.com/mrichter23/priming_repository/tree/main/myapp/overview.png", height="20%")
+    ui.tags.img(src="https://github.com/mrichter23/priming_repository/tree/main/myapp/www/overview.png", height="20%")
     ),
     
     ui.p(
