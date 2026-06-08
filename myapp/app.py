@@ -6,8 +6,7 @@ import matplotlib.pyplot as plt
 from itertools import chain
 #from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import io
-from pyodide.http import open_url
-
+#from pyodide.http import open_url
 
 def parse_uploaded_file(file):
     if file is None:
@@ -79,28 +78,28 @@ def plot_upset(membership_df):
 # Predefined lists per category
 
 rna_e14_ctx_neurons = pd.read_csv("www/DEGs_E14_Ctx_up_neurons_vs_NSC.txt", header=None)
-rna_e14_lge_neurons = pd.read_csv(open_url("www/DEGs_E14_LGE_up_neurons_vs_NSC.txt"), header=None)
-astro = pd.read_csv(open_url("www/high_expressed_genes_astrocytes_Pereira_1.csv"), header=None)
+rna_e14_lge_neurons = pd.read_csv("www/DEGs_E14_LGE_up_neurons_vs_NSC.txt", header=None)
+astro = pd.read_csv("www/high_expressed_genes_astrocytes_Pereira_1.csv", header=None)
 
-atac_ctx_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E14_vs_E18.txt"), header=None)
-atac_ctx_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E18_vs_E14.txt"), header=None)
-atac_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None)
-atac_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None)
-atac_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None)
-atac_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None)
-atac_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None)
-atac_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None)
+atac_ctx_nsc_e14 = pd.read_csv("www/DARs_NSC_Ctx_up_E14_vs_E18.txt", header=None)
+atac_ctx_nsc_e18 = pd.read_csv("www/DARs_NSC_Ctx_up_E18_vs_E14.txt", header=None)
+atac_e14_nsc_ctx = pd.read_csv("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt", header=None)
+atac_e14_nsc_lge = pd.read_csv("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt", header=None)
+atac_e18_nsc_ctx = pd.read_csv("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt", header=None)
+atac_e18_nsc_lge = pd.read_csv("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt", header=None)
+atac_lge_nsc_e14 = pd.read_csv("www/DARs_NSC_LGE_up_E14_vs_E18.txt", header=None)
+atac_lge_nsc_e18 = pd.read_csv("www/DARs_NSC_LGE_up_E18_vs_E14.txt", header=None)
 
-motifs_ctx_nsc_e14 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E14_vs_E18.txt"), header=None)
-motifs_ctx_nsc_e18 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E18_vs_E14.txt"), header=None)
-motifs_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None)
-motifs_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None)
-motifs_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None)
-motifs_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None)
-motifs_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None)
-motifs_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None)
+motifs_ctx_nsc_e14 = pd.read_csv("www/Motifs_NSC_Ctx_up_E14_vs_E18.txt", header=None)
+motifs_ctx_nsc_e18 = pd.read_csv("www/Motifs_NSC_Ctx_up_E18_vs_E14.txt", header=None)
+motifs_e14_nsc_ctx = pd.read_csv("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt", header=None)
+motifs_e14_nsc_lge = pd.read_csv("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt", header=None)
+motifs_e18_nsc_ctx = pd.read_csv("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt", header=None)
+motifs_e18_nsc_lge = pd.read_csv("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt", header=None)
+motifs_lge_nsc_e14 = pd.read_csv("www/DARs_NSC_LGE_up_E14_vs_E18.txt", header=None)
+motifs_lge_nsc_e18 = pd.read_csv("www/DARs_NSC_LGE_up_E18_vs_E14.txt", header=None)
 
-cutnrun = pd.read_csv(open_url("www/targets_2IR.csv"), header=None)
+cutnrun = pd.read_csv("www/targets_2IR.csv", header=None)
 
 predefined_lists = {
     1: {
@@ -211,7 +210,7 @@ def server(input, output, session):
     #    #dir = Path(__file__).resolve().parent
     #    #img: ImgData = {"src": str(dir/"overview.png"), "width": "500px", "style": "display:block; margin:0; padding:0;"}
     #    #return {"src":img_url}
-    #    #return {open_url("www/overview.png")}
+    #    #return {"www/overview.png")}
     #return img_url
 
     @reactive.Calc
