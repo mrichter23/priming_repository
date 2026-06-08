@@ -1,6 +1,4 @@
 shiny
 pandas
 matplotlib
-itertools
-io
 
