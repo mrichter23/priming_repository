@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "/home/maria/projects/mouse/in_vivo/priming_repository/myapp",
+        "app_url": "https://physiologicalgenomicsbmc.shinyapps.io/priming-developmental-brain/",
+        "app_id": "17481654",
+        "app_guid": null,
+        "title": "priming-developmental-brain",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}
