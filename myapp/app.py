@@ -80,7 +80,7 @@ def plot_upset(membership_df):
 
 rna_e14_ctx_neurons = pd.read_csv("DEGs_E14_Ctx_up_neurons_vs_NSC.txt", header=None)
 rna_e14_lge_neurons = pd.read_csv("DEGs_E14_LGE_up_neurons_vs_NSC.txt", header=None)
-astro = pd.read_csv("gliogenic/high_expressed_genes_astrocytes_Pereira_1.csv")
+astro = pd.read_csv("high_expressed_genes_astrocytes_Pereira_1.csv")
 
 atac_ctx_nsc_e14 = pd.read_csv("DARs_NSC_Ctx_up_E14_vs_E18.txt", header=None)
 atac_ctx_nsc_e18 = pd.read_csv("DARs_NSC_Ctx_up_E18_vs_E14.txt", header=None)
