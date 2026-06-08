@@ -161,9 +161,9 @@ app_ui = ui.page_fluid(
     ui.div(
     {"style": "margin:0; padding:0; height:auto;"},
     
-    #ui.output_image("image")
+    ui.output_image("image")
     
-    ui.tags.img(src="https://github.com/mrichter23/priming_repository/tree/main/myapp/www/overview.png", height="20%")
+    #ui.tags.img(src="https://github.com/mrichter23/priming_repository/tree/main/myapp/www/overview.png", height="20%")
     ),
     
     ui.p(
@@ -200,18 +200,16 @@ app_ui = ui.page_fluid(
 # ---------- Server ----------
 
 def server(input, output, session):
-    #@render.image
-    #def image():
+    @render.image
+    def image():
     #    img_url = "https://github.com/mrichter23/priming_repository/tree/main/myapp/overview.png"
 # ---------- Helper functions ----------
     #    #from pathlib import Path
-    #    img_url = "https://github.com/mrichter23/priming_repository/tree/main/myapp/overview.png"
-    #    return ui.tags.img(src=img_url, height="100%", width="100%")
     #    #dir = Path(__file__).resolve().parent
     #    #img: ImgData = {"src": str(dir/"overview.png"), "width": "500px", "style": "display:block; margin:0; padding:0;"}
     #    #return {"src":img_url}
-    #    #return {"www/overview.png")}
-    #return img_url
+        return {"src":"www/overview.png"}
+
 
     @reactive.Calc
     def selected_lists():
