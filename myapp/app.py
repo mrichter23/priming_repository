@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 from itertools import chain
 #from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import io
+from pyodide.http import open_url
 
-# ---------- Helper functions ----------
 
 def parse_uploaded_file(file):
     if file is None:
@@ -78,35 +78,35 @@ def plot_upset(membership_df):
 
 # Predefined lists per category
 
-rna_e14_ctx_neurons = pd.read_csv("DEGs_E14_Ctx_up_neurons_vs_NSC.txt", header=None)
-rna_e14_lge_neurons = pd.read_csv("DEGs_E14_LGE_up_neurons_vs_NSC.txt", header=None)
-astro = pd.read_csv("high_expressed_genes_astrocytes_Pereira_1.csv")
+rna_e14_ctx_neurons = pd.read_csv(open_url("www/DEGs_E14_Ctx_up_neurons_vs_NSC.txt"), header=None)
+rna_e14_lge_neurons = pd.read_csv(open_url("www/DEGs_E14_LGE_up_neurons_vs_NSC.txt"), header=None)
+astro = pd.read_csv(open_url("www/high_expressed_genes_astrocytes_Pereira_1.csv"), header=None)
 
-atac_ctx_nsc_e14 = pd.read_csv("DARs_NSC_Ctx_up_E14_vs_E18.txt", header=None)
-atac_ctx_nsc_e18 = pd.read_csv("DARs_NSC_Ctx_up_E18_vs_E14.txt", header=None)
-atac_e14_nsc_ctx = pd.read_csv("DARs_NSC_E14_up_Ctx_vs_LGE.txt", header=None)
-atac_e14_nsc_lge = pd.read_csv("DARs_NSC_E14_up_LGE_vs_Ctx.txt", header=None)
-atac_e18_nsc_ctx = pd.read_csv("DARs_NSC_E18_up_Ctx_vs_LGE.txt", header=None)
-atac_e18_nsc_lge = pd.read_csv("DARs_NSC_E18_up_LGE_vs_Ctx.txt", header=None)
-atac_lge_nsc_e14 = pd.read_csv("DARs_NSC_LGE_up_E14_vs_E18.txt", header=None)
-atac_lge_nsc_e18 = pd.read_csv("DARs_NSC_LGE_up_E18_vs_E14.txt", header=None)
+atac_ctx_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E14_vs_E18.txt"), header=None)
+atac_ctx_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E18_vs_E14.txt"), header=None)
+atac_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None)
+atac_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None)
+atac_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None)
+atac_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None)
+atac_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None)
+atac_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None)
 
-motifs_ctx_nsc_e14 = pd.read_csv("Motifs_NSC_Ctx_up_E14_vs_E18.txt", header=None)
-motifs_ctx_nsc_e18 = pd.read_csv("Motifs_NSC_Ctx_up_E18_vs_E14.txt", header=None)
-motifs_e14_nsc_ctx = pd.read_csv("DARs_NSC_E14_up_Ctx_vs_LGE.txt", header=None)
-motifs_e14_nsc_lge = pd.read_csv("DARs_NSC_E14_up_LGE_vs_Ctx.txt", header=None)
-motifs_e18_nsc_ctx = pd.read_csv("DARs_NSC_E18_up_Ctx_vs_LGE.txt", header=None)
-motifs_e18_nsc_lge = pd.read_csv("DARs_NSC_E18_up_LGE_vs_Ctx.txt", header=None)
-motifs_lge_nsc_e14 = pd.read_csv("DARs_NSC_LGE_up_E14_vs_E18.txt", header=None)
-motifs_lge_nsc_e18 = pd.read_csv("DARs_NSC_LGE_up_E18_vs_E14.txt", header=None)
+motifs_ctx_nsc_e14 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E14_vs_E18.txt"), header=None)
+motifs_ctx_nsc_e18 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E18_vs_E14.txt"), header=None)
+motifs_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None)
+motifs_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None)
+motifs_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None)
+motifs_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None)
+motifs_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None)
+motifs_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None)
 
-cutnrun = pd.read_csv("targets_2IR.csv")
+cutnrun = pd.read_csv(open_url("www/targets_2IR.csv"), header=None)
 
 predefined_lists = {
     1: {
         "DEGs E14 Ctx up Neurons vs NSC": rna_e14_ctx_neurons[0].tolist(),
         "DEGs E14 LGE up Neurons vs NSC": rna_e14_lge_neurons[0].tolist(),
-        "Genes highly expressed in Astrocytes": astro["high_ast"].tolist()
+        "Genes highly expressed in Astrocytes": astro[0].tolist()
     },
     2: {
         "DARs Ctx NSC up E14 vs E18": atac_ctx_nsc_e14[0].tolist(),
@@ -129,7 +129,7 @@ predefined_lists = {
         "Motifs LGE NSC up E18 vs E14": motifs_lge_nsc_e18[0].tolist(),
     },
     4: {
-        "TGIF2 cut&run": cutnrun["gene"].tolist()
+        "TGIF2 cut&run": cutnrun[0].tolist()
     }
 }
 
@@ -162,7 +162,9 @@ app_ui = ui.page_fluid(
     ui.div(
     {"style": "margin:0; padding:0; height:auto;"},
     
-    ui.output_image("image")
+    #ui.output_image("image")
+    
+    ui.tags.img(src="https://github.com/mrichter23/priming_repository/tree/main/myapp/overview.png", height="20%")
     ),
     
     ui.p(
@@ -199,13 +201,18 @@ app_ui = ui.page_fluid(
 # ---------- Server ----------
 
 def server(input, output, session):
-    @render.image
-    def image():
-        #from pathlib import Path
-
-        #dir = Path(__file__).resolve().parent
-        #img: ImgData = {"src": str(dir/"overview.png"), "width": "500px", "style": "display:block; margin:0; padding:0;"}
-        return {"src":"overview.png"}
+    #@render.image
+    #def image():
+    #    img_url = "https://github.com/mrichter23/priming_repository/tree/main/myapp/overview.png"
+# ---------- Helper functions ----------
+    #    #from pathlib import Path
+    #    img_url = "https://github.com/mrichter23/priming_repository/tree/main/myapp/overview.png"
+    #    return ui.tags.img(src=img_url, height="100%", width="100%")
+    #    #dir = Path(__file__).resolve().parent
+    #    #img: ImgData = {"src": str(dir/"overview.png"), "width": "500px", "style": "display:block; margin:0; padding:0;"}
+    #    #return {"src":img_url}
+    #    #return {open_url("www/overview.png")}
+    #return img_url
 
     @reactive.Calc
     def selected_lists():
