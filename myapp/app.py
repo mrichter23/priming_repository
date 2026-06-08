@@ -78,29 +78,29 @@ def plot_upset(membership_df):
 
 # Predefined lists per category
 
-rna_e14_ctx_neurons = pd.read_csv("www/DEGs_E14_Ctx_up_neurons_vs_NSC.txt", header=None, on_bad_lines='skip')
-rna_e14_lge_neurons = pd.read_csv(open_url("www/DEGs_E14_LGE_up_neurons_vs_NSC.txt"), header=None, on_bad_lines='skip')
-astro = pd.read_csv(open_url("www/high_expressed_genes_astrocytes_Pereira_1.csv"), header=None, on_bad_lines='skip')
+rna_e14_ctx_neurons = pd.read_csv("www/DEGs_E14_Ctx_up_neurons_vs_NSC.txt", header=None)
+rna_e14_lge_neurons = pd.read_csv(open_url("www/DEGs_E14_LGE_up_neurons_vs_NSC.txt"), header=None)
+astro = pd.read_csv(open_url("www/high_expressed_genes_astrocytes_Pereira_1.csv"), header=None)
 
-atac_ctx_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E14_vs_E18.txt"), header=None, on_bad_lines='skip')
-atac_ctx_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E18_vs_E14.txt"), header=None, on_bad_lines='skip')
-atac_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None, on_bad_lines='skip')
-atac_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None, on_bad_lines='skip')
-atac_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None, on_bad_lines='skip')
-atac_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None, on_bad_lines='skip')
-atac_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None, on_bad_lines='skip')
-atac_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None, on_bad_lines='skip')
+atac_ctx_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E14_vs_E18.txt"), header=None)
+atac_ctx_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_Ctx_up_E18_vs_E14.txt"), header=None)
+atac_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None)
+atac_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None)
+atac_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None)
+atac_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None)
+atac_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None)
+atac_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None)
 
-motifs_ctx_nsc_e14 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E14_vs_E18.txt"), header=None, on_bad_lines='skip')
-motifs_ctx_nsc_e18 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E18_vs_E14.txt"), header=None, on_bad_lines='skip')
-motifs_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None, on_bad_lines='skip')
-motifs_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None, on_bad_lines='skip')
-motifs_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None, on_bad_lines='skip')
-motifs_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None, on_bad_lines='skip')
-motifs_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None, on_bad_lines='skip')
-motifs_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None, on_bad_lines='skip')
+motifs_ctx_nsc_e14 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E14_vs_E18.txt"), header=None)
+motifs_ctx_nsc_e18 = pd.read_csv(open_url("www/Motifs_NSC_Ctx_up_E18_vs_E14.txt"), header=None)
+motifs_e14_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E14_up_Ctx_vs_LGE.txt"), header=None)
+motifs_e14_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E14_up_LGE_vs_Ctx.txt"), header=None)
+motifs_e18_nsc_ctx = pd.read_csv(open_url("www/DARs_NSC_E18_up_Ctx_vs_LGE.txt"), header=None)
+motifs_e18_nsc_lge = pd.read_csv(open_url("www/DARs_NSC_E18_up_LGE_vs_Ctx.txt"), header=None)
+motifs_lge_nsc_e14 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E14_vs_E18.txt"), header=None)
+motifs_lge_nsc_e18 = pd.read_csv(open_url("www/DARs_NSC_LGE_up_E18_vs_E14.txt"), header=None)
 
-cutnrun = pd.read_csv(open_url("www/targets_2IR.csv"), header=None, on_bad_lines='skip')
+cutnrun = pd.read_csv(open_url("www/targets_2IR.csv"), header=None)
 
 predefined_lists = {
     1: {
